@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="exhibition-title">Exhibition Detail - THE ART</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .font-serif-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #E78D0E;
+            transition: width 0.3s ease;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: #E78D0E;
+        }
+        .nav-link.active::after, .nav-link:hover::after {
+            width: 100%;
+        }
+        .section-title {
+            border-bottom: 3px solid #E78D0E;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header id="header" class="bg-black/90 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="The%20art.html#home" class="text-2xl font-bold font-serif-display text-white leading-tight text-center">THE<br>ART</a>
+            <nav class="hidden md:flex items-center space-x-8 text-white uppercase text-sm">
+                <a href="The%20art.html#home" class="nav-link">Home</a>
+                <a href="The%20art.html#about" class="nav-link">About Us</a>
+                <a href="The%20art.html#exhibition" class="nav-link active">Exhibition</a>
+                <a href="The%20art.html#history" class="nav-link">History</a>
+                <a href="The%20art.html#visit" class="nav-link">Visit</a>
+                <a href="The%20art.html#contact" class="nav-link">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-gray-700">
+            <a href="The%20art.html#home" class="block py-3 px-6 text-center text-white hover:bg-gray-800 mobile-nav-link">Home</a>
+            <a href="The%20art.html#about" class="block py-3 px-6 text-center text-white hover:bg-gray-800 mobile-nav-link">About Us</a>
+            <a href="The%20art.html#exhibition" class="block py-3 px-6 text-center text-white hover:bg-gray-800 mobile-nav-link">Exhibition</a>
+            <a href="The%20art.html#history" class="block py-3 px-6 text-center text-white hover:bg-gray-800 mobile-nav-link">History</a>
+            <a href="The%20art.html#visit" class="block py-3 px-6 text-center text-white hover:bg-gray-800 mobile-nav-link">Visit</a>
+            <a href="The%20art.html#contact" class="block py-3 px-6 text-center text-white hover:bg-gray-800 mobile-nav-link">Contact</a>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-16">
+        <section class="container mx-auto px-6 py-12">
+            <div class="text-center mb-12">
+                <h1 id="exhibition-detail-title" class="text-5xl font-bold font-serif-display mb-4 section-title inline-block"></h1>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-8">
+                <div class="lg:w-2/3">
+                    <img id="exhibition-detail-image" src="" alt="Exhibition Image" class="w-full h-auto object-cover rounded-lg shadow-xl mb-6">
+                    <p id="exhibition-detail-description" class="text-lg text-gray-700 leading-relaxed"></p>
+                </div>
+                <div class="lg:w-1/3 bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold font-serif-display mb-4">Exhibition Details</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><strong>Dates:</strong> <span id="exhibition-detail-dates"></span></li>
+                        <li><strong>Artist/Curator:</strong> <span id="exhibition-detail-artist"></span></li>
+                        <li><strong>Location:</strong> <span id="exhibition-detail-location"></span></li>
+                        <li><strong>Admission:</strong> <span id="exhibition-detail-admission"></span></li>
+                    </ul>
+                    <div class="mt-8">
+                        <h4 class="text-xl font-bold font-serif-display mb-3">About the Artist</h4>
+                        <p id="exhibition-detail-artist-bio" class="text-gray-600 text-sm"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-3xl font-bold font-serif-display mb-4 leading-tight">THE<br>ART</p>
+            <div class="space-y-4">
+                <div>
+                    <p class="mb-2">Follow us on social media</p>
+                    <div class="flex justify-center space-x-6 text-2xl">
+                        <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+                <p class="mb-2">Reach out to us if you have any questions</p>
+                <div class="flex justify-center space-x-6 text-xl">
+                    <a href="mailto:info@theart.com" class="hover:text-amber-400 transition"><i class="fa-solid fa-message"></i></a>
+                    <a href="tel:+85512345678" class="hover:text-amber-400 transition"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+            <p class="text-gray-500 mt-8">© <span id="year"></span> THE ART. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when a link is clicked
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Exhibition Data (This would typically come from a database or API)
+            const exhibitionsData = {
+                'hanuman-arts': {
+                    title: 'Hanuman Arts of Reamker',
+                    image: 'art2.jpg',
+                    dates: 'June 28, 2025 - Ongoing',
+                    artist: 'Traditional Khmer Artists',
+                    location: 'Main Gallery, The Art Museum',
+                    admission: 'Free with Museum Admission',
+                    description: 'Explore the vibrant and dynamic depictions of Hanuman, the revered monkey general from the Cambodian epic Reamker. This exhibition showcases various artistic interpretations, from ancient carvings to contemporary paintings, highlighting Hanuman\'s strength, loyalty, and cunning through the ages.',
+                    artistBio: 'The works in this exhibition are a collection from various traditional Khmer artists throughout history, celebrating the enduring legacy of the Reamker epic.'
+                },
+                'khmer-bas-relief': {
+                    title: 'Khmer Temple Bas-Relief',
+                    image: 'art1.jpg',
+                    dates: 'May 27, 2025 - Ongoing',
+                    artist: 'Ancient Khmer Sculptors',
+                    location: 'Historical Hall, The Art Museum',
+                    admission: 'Free with Museum Admission',
+                    description: 'Step into the intricate world of Khmer temple bas-reliefs, masterpieces of ancient Cambodian artistry. This exhibition features detailed photographic reproductions and select original fragments, offering a close look at the mythological narratives, historical events, and daily life carved into the walls of Angkorian temples.',
+                    artistBio: 'The ancient Khmer sculptors were anonymous masters whose collective genius shaped the iconic temples of Angkor, leaving behind a profound artistic and historical legacy.'
+                },
+                'apsaras': {
+                    title: 'Apsaras: Divine Dancers of Cambodia',
+                    image: 'AW-apsaras-blog.jpg',
+                    dates: 'July 1, 2025 - Ongoing',
+                    artist: 'Various Cambodian Artists',
+                    location: 'Dance & Mythology Wing, The Art Museum',
+                    admission: 'Free with Museum Admission',
+                    description: 'Immerse yourself in the ethereal beauty of Apsaras, the celestial dancers of Hindu and Buddhist mythology, deeply embedded in Cambodian culture. This exhibition presents a diverse collection of art, from traditional costumes and ancient carvings to modern interpretations, celebrating the grace and significance of these divine figures.',
+                    artistBio: 'This exhibition features works by various Cambodian artists, both historical and contemporary, who have been inspired by the timeless elegance of Apsaras.'
+                },
+                'sleeping-vishnu': {
+                    title: 'Sleeping Vishnu: Musée Guimet',
+                    image: 'hero4.jpg.jpg',
+                    dates: 'July 17, 2025 – May 31, 2026',
+                    artist: 'Unknown Master (12th Century Khmer)',
+                    location: 'Temporary Exhibition Hall, The Art Museum',
+                    admission: 'Free with Museum Admission',
+                    description: 'This special exhibition, on loan from the Musée Guimet, highlights the magnificent sculpture of "Sleeping Vishnu," a pivotal piece of Khmer artistry from the 12th century. The sculpture depicts Vishnu in cosmic sleep, a powerful symbol in Hindu mythology, and offers insights into the religious and artistic practices of the Angkorian era. Accompanying displays provide context on the iconography and the journey of this masterpiece.',
+                    artistBio: 'The sculptor of "Sleeping Vishnu" remains anonymous, as was common for many grand religious works of the Angkorian period. Their mastery, however, is evident in the profound spiritual and artistic expression of this iconic piece.'
+                },
+                'sphinx-tanis': {
+                    title: 'Great Sphinx of Tanis: Louvre',
+                    image: 'card14.webp',
+                    dates: 'September 12, 2025 – June 9, 2026',
+                    artist: 'Ancient Egyptian Sculptors',
+                    location: 'International Exhibit Gallery, The Art Museum',
+                    admission: 'Free with Museum Admission',
+                    description: 'Experience the grandeur of ancient Egypt with the "Great Sphinx of Tanis," on special loan from the Louvre Museum. This colossal granite sculpture, dating back to the Old Kingdom, is one of the largest sphinxes outside of Egypt. The exhibition delves into the mythology, craftsmanship, and historical context of this monumental work, providing a unique opportunity to witness its majesty firsthand.',
+                    artistBio: 'The creation of such colossal works in ancient Egypt was a testament to the highly organized and skilled artistry of countless anonymous sculptors and craftsmen under the pharaohs.'
+                },
+                'van-gogh': {
+                    title: 'Van Gogh: British Museum',
+                    image: 'Vang gogh1.jpg',
+                    dates: 'July 26, 2025 – May 9, 2026',
+                    artist: 'Vincent van Gogh',
+                    location: 'Modern Art Wing, The Art Museum',
+                    admission: 'Free with Museum Admission',
+                    description: 'A rare opportunity to view a selection of drawings and prints by the legendary Dutch artist Vincent van Gogh, courtesy of the British Museum. This exhibition focuses on Van Gogh\'s earlier works and his exploration of landscape and peasant life, offering a deeper understanding of his artistic development before his iconic oil paintings. Discover the raw emotion and unique perspective that defined his revolutionary approach to art.',
+                    artistBio: 'Vincent van Gogh (1853–1890) was a Dutch Post-Impressionist painter who is among the most famous and influential figures in the history of Western art. He created about 2,100 artworks, including around 860 oil paintings, most of which date from the last two years of his life. His work had a far-reaching influence on early 20th-century modern art.'
+                }
+            };
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const exhibitionId = urlParams.get('id');
+
+            if (exhibitionId && exhibitionsData[exhibitionId]) {
+                const data = exhibitionsData[exhibitionId];
+                document.getElementById('exhibition-title').textContent = `${data.title} - THE ART`;
+                document.getElementById('exhibition-detail-title').textContent = data.title;
+                document.getElementById('exhibition-detail-image').src = data.image;
+                document.getElementById('exhibition-detail-description').textContent = data.description;
+                document.getElementById('exhibition-detail-dates').textContent = data.dates;
+                document.getElementById('exhibition-detail-artist').textContent = data.artist;
+                document.getElementById('exhibition-detail-location').textContent = data.location;
+                document.getElementById('exhibition-detail-admission').textContent = data.admission;
+                document.getElementById('exhibition-detail-artist-bio').textContent = data.artistBio;
+            } else {
+                // Handle case where exhibition ID is not found
+                document.getElementById('exhibition-title').textContent = 'Exhibition Not Found - THE ART';
+                document.getElementById('exhibition-detail-title').textContent = 'Exhibition Not Found';
+                document.getElementById('exhibition-detail-description').textContent = 'The exhibition you are looking for does not exist or has been removed.';
+                document.querySelector('.lg\\:w-2\\/3').innerHTML = `
+                    <img src="https://via.placeholder.com/800x450?text=Exhibition+Not+Found" alt="Exhibition Not Found" class="w-full h-auto object-cover rounded-lg shadow-xl mb-6">
+                    <p class="text-lg text-gray-700 leading-relaxed">The exhibition you are looking for does not exist or has been removed. Please check the URL or return to the main <a href="The%20art.html#exhibition" class="text-amber-600 hover:underline">Exhibitions page</a>.</p>
+                `;
+                document.querySelector('.lg\\:w-1\\/3').remove(); // Remove the details sidebar if exhibition not found
+            }
+        });
+    </script>
+
+</body>
+</html>
