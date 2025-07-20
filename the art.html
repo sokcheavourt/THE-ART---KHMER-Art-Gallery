@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE ART - Cambodian Art Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Custom styles for typography and other elements */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .font-serif-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #E78D0E; /* Accent color from provided files */
+            transition: width 0.3s ease;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: #E78D0E;
+        }
+        .nav-link.active::after, .nav-link:hover::after {
+            width: 100%;
+        }
+        .section-title {
+            border-bottom: 3px solid #E78D0E;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .gallery-img-container {
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+        .gallery-img {
+            transition: transform 0.4s ease-in-out;
+        }
+        .gallery-img-container:hover .gallery-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header id="header" class="bg-black/90 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold font-serif-display text-white leading-tight text-center">THE<br>ART</a>
+            <nav class="hidden md:flex items-center space-x-8 text-white uppercase text-sm">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#exhibition" class="nav-link">Exhibition</a>
+                <a href="#history" class="nav-link">History</a>
+                <a href="#visit" class="nav-link">Visit</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-gray-700">
+            <a href="#home" class="block py-3 px-6 text-center text-white hover:bg-gray-800 mobile-nav-link">Home</a>
+            <a href="#about" class="block py-3 px-6 text-center text-white hover:bg-gray-800 mobile-nav-link">About Us</a>
+            <a href="#exhibition" class="block py-3 px-6 text-center text-white hover:bg-gray-800 mobile-nav-link">Exhibition</a>
+            <a href="#history" class="block py-3 px-6 text-center text-white hover:bg-gray-800 mobile-nav-link">History</a>
+            <a href="#visit" class="block py-3 px-6 text-center text-white hover:bg-gray-800 mobile-nav-link">Visit</a>
+            <a href="#contact" class="block py-3 px-6 text-center text-white hover:bg-gray-800 mobile-nav-link">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="h-screen bg-cover bg-center bg-fixed flex items-center justify-center text-white" style="background-image: url('banner.gif');">
+            <div class="bg-black/60 p-8 md:p-12 rounded-lg text-center backdrop-blur-sm">
+                <h1 class="text-4xl md:text-6xl font-bold font-serif-display mb-4">Art Collection from Different Museums</h1>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">Step into the heart of Cambodian heritage. Our museum brings together timeless works of art, culture, and history from across the nation and beyond.</p>
+                <a href="#exhibition" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Explore Exhibitions</a>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold font-serif-display section-title">Welcome to THE ART</h2>
+                    <p class="mt-4 text-lg text-gray-600">Where Art, History and Culture Come Alive</p>
+                </div>
+                <div class="max-w-screen-lg mx-auto prose lg:prose-lg text-gray-700 text-center">
+                    <p>In a world rapidly shifting toward the digital, many stories risk fading into silence especially those rooted in smaller nations or cultures that have faced war, colonization, and loss. Cambodian art is one of those stories. Rich in spirit, but often under represented. Vibrant, yet overlooked.</p>
+                    <p class="mb-12">THE ART was created to change that. This is a space to amplify Cambodian voices past and present. A space where artists, curators, students, and art lovers can connect through shared appreciation of Khmer creativity. Whether it’s a hand-woven silk, a temple relief, or a digital reimagining of Apsara mythology, every piece here contributes to the evolving story of Cambodia.</p>
+                </div>
+                
+                <div class="bg-gray-100 py-12 rounded-lg">
+                    <div class="max-w-screen-lg mx-auto px-4">
+                        <h3 class="text-3xl font-bold font-serif-display text-center mb-10">Our Team</h3>
+                        <div class="mb-12">
+                            <h4 class="text-xl font-bold mb-6 text-center">Meet our Mentor</h4>
+                            <div class="flex justify-center">
+                                <div>
+                                    <img src="EUNG LYZHIA.jpeg" alt="EUNG LYZHIA" class="w-32 h-32 mx-auto rounded-full object-cover mb-2 shadow-lg">
+                                    <p class="text-md font-semibold text-center">EUNG LYZHIA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-8 text-center">Meet our Team Members</h4>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+                                <div><img src="PHOUENG SREY MEAN.jpg" alt="Phoueng Srey Mean" class="w-24 h-24 mx-auto rounded-full object-cover mb-2 shadow-md"><p class="text-sm font-semibold">PHOUENG SREY MEAN</p></div>
+                                <div><img src="SAVUTH DAVIN.JPG" alt="Savuth Davin" class="w-24 h-24 mx-auto rounded-full object-cover mb-2 shadow-md"><p class="text-sm font-semibold">SAVUTH DAVIN</p></div>
+                                <div><img src="PHOEURN SOLYTA.png" alt="Phoeurn Solyta" class="w-24 h-24 mx-auto rounded-full object-cover mb-2 shadow-md"><p class="text-sm font-semibold">PHOEURN SOLYTA</p></div>
+                                <div><img src="KEO CHING CHOU.png" alt="Keo Ching Chou" class="w-24 h-24 mx-auto rounded-full object-cover mb-2 shadow-md"><p class="text-sm font-semibold">KEO CHING CHOU</p></div>
+                                <div><img src="LIM KETHYARAVY.png" alt="Lim Kethyaravy" class="w-24 h-24 mx-auto rounded-full object-cover mb-2 shadow-md"><p class="text-sm font-semibold">LIM KETHYARAVY</p></div>
+                                <div><img src="VOURT SOKCHEA.png" alt="Vourt Sokchea" class="w-24 h-24 mx-auto rounded-full object-cover mb-2 shadow-md"><p class="text-sm font-semibold">VOURT SOKCHEA</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="exhibition" class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold font-serif-display section-title">Exhibitions</h2>
+                    <p class="mt-4 text-lg text-gray-600">All exhibitions are free with Museum admission.</p>
+                </div>
+                
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold font-serif-display text-center mb-10">Featured</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <a href="exhibitions.html?id=hanuman-arts" class="block bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+                            <div class="gallery-img-container"><img src="art2.jpg" alt="Hanuman Arts of Reamker" class="w-full h-64 object-cover gallery-img"></div>
+                            <div class="p-6"><h4 class="text-xl font-bold font-serif-display mb-2">Hanuman Arts of Reamker</h4><p class="text-gray-600">June 28 - Ongoing</p></div>
+                        </a>
+                        <a href="exhibitions.html?id=khmer-bas-relief" class="block bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+                            <div class="gallery-img-container"><img src="art1.jpg" alt="Khmer Temple Bas-Relief" class="w-full h-64 object-cover gallery-img"></div>
+                            <div class="p-6"><h4 class="text-xl font-bold font-serif-display mb-2">Khmer Temple Bas-Relief</h4><p class="text-gray-600">May 27 - Ongoing</p></div>
+                        </a>
+                        <a href="exhibitions.html?id=apsaras" class="block bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+                            <div class="gallery-img-container"><img src="AW-apsaras-blog.jpg" alt="Apsaras" class="w-full h-64 object-cover gallery-img"></div>
+                            <div class="p-6"><h4 class="text-xl font-bold font-serif-display mb-2">Apsaras</h4><p class="text-gray-600">July 1 - Ongoing</p></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-3xl font-bold font-serif-display text-center mb-10">Upcoming</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <a href="exhibitions.html?id=sleeping-vishnu" class="block bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+                            <div class="gallery-img-container"><img src="hero4.jpg.jpg" alt="Sleeping Vishnu" class="w-full h-64 object-cover gallery-img"></div>
+                            <div class="p-6"><h4 class="text-xl font-bold font-serif-display mb-2">Sleeping Vishnu: Musée Guimet</h4><p class="text-gray-600">July 17, 2025–May 31, 2026</p></div>
+                        </a>
+                        <a href="exhibitions.html?id=sphinx-tanis" class="block bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+                            <div class="gallery-img-container"><img src="card14.webp" alt="Great Sphinx of Tanis" class="w-full h-64 object-cover gallery-img"></div>
+                            <div class="p-6"><h4 class="text-xl font-bold font-serif-display mb-2">Great Sphinx of Tanis: Louvre</h4><p class="text-gray-600">September 12, 2025–June 9, 2026</p></div>
+                        </a>
+                        <a href="exhibitions.html?id=van-gogh" class="block bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+                            <div class="gallery-img-container"><img src="Vang gogh1.jpg" alt="Van Gogh Exhibition" class="w-full h-64 object-cover gallery-img"></div>
+                            <div class="p-6"><h4 class="text-xl font-bold font-serif-display mb-2">Van Gogh: British Museum</h4><p class="text-gray-600">July 26, 2025–May 9, 2026</p></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="history" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold font-serif-display section-title">History of the National Museum</h2>
+                </div>
+                <div class="max-w-3xl mx-auto prose lg:prose-lg text-gray-700">
+                    <p>George Groslier (1887–1945), historian, curator and author was the motivating force behind much of the revival of interest in traditional Cambodian arts and crafts, and it was he who designed this building that is today ‘traditional Khmer’ architecture. The foundation stone for the new museum was laid on 15 August 1917. Some two-and-a-half years later, the completed museum was inaugurated during Khmer New Year on 13 April 1920.</p>
+                    <p>Control of the National Museum and Arts Administration was ceded by the French to the Cambodians on 9 August 1951. In 1966 Chea Thay Seng was the first Cambodian director of the museum. During the Khmer Rouge regime (from 1975 to 1979), all aspects of Cambodian life including the cultural realm were devastated. The museum was abandoned and found in disrepair, its roof rotten and home to a vast colony of bats, the garden overgrown, and the collection in disarray. It was quickly tidied up and reopened to the public on 13 April 1979.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="visit" class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold font-serif-display section-title">Visit The Museums</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold font-serif-display mb-4">National Museum of Cambodia</h3>
+                        <p class="text-gray-600 mb-4">Preah Ang Eng St. (13), Phnom Penh</p>
+                        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.804696468291!2d104.92657147481727!3d11.565854288635045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109514824227a9d%3A0xb8be437d2b4aa725!2sNational%20Museum%20of%20Cambodia!5e0!3m2!1sen!2skh" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold font-serif-display mb-4">Angkor National Museum</h3>
+                        <p class="text-gray-600 mb-4">968 Vithei Charles de Gaulle, Siem Reap</p>
+                        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3881.739837250499!2d103.85754457484862!3d13.36644648698644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3110170ccc06c39f%3A0x9f46043c5565afe3!2sAngkor%20National%20Museum!5e0!3m2!1sen!2skh" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold font-serif-display section-title">Get In Touch</h2>
+                    <p class="mt-4 text-lg text-gray-600">We'd love to hear from you. For inquiries, acquisitions, or feedback.</p>
+                </div>
+                <div class="max-w-2xl mx-auto">
+                    <form action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="sr-only">Name</label>
+                            <input type="text" name="name" id="name" class="w-full px-4 py-3 rounded-lg border-gray-300 focus:ring-amber-500 focus:border-amber-500 transition" placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" name="email" id="email" class="w-full px-4 py-3 rounded-lg border-gray-300 focus:ring-amber-500 focus:border-amber-500 transition" placeholder="Your Email" required>
+                        </div>
+                        <div>
+                            <label for="message" class="sr-only">Message</label>
+                            <textarea name="message" id="message" rows="5" class="w-full px-4 py-3 rounded-lg border-gray-300 focus:ring-amber-500 focus:border-amber-500 transition" placeholder="Your Message" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-12 rounded-full transition duration-300 transform hover:scale-105">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-3xl font-bold font-serif-display mb-4 leading-tight">THE<br>ART</p>
+            <div class="space-y-4">
+                <div>
+                    <p class="mb-2">Follow us on social media</p>
+                    <div class="flex justify-center space-x-6 text-2xl">
+                        <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+                <p class="mb-2">Reach out to us if you have any questions</p>
+                <div class="flex justify-center space-x-6 text-xl">
+                    <a href="mailto:info@theart.com" class="hover:text-amber-400 transition"><i class="fa-solid fa-message"></i></a>
+                    <a href="tel:+85512345678" class="hover:text-amber-400 transition"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+            <p class="text-gray-500 mt-8">© <span id="year"></span> THE ART. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when a link is clicked
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Active nav link highlighting on scroll
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('header nav a.nav-link');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            // Only activate if the link is an internal hash link
+                            if (link.getAttribute('href').startsWith('#')) {
+                                if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                    link.classList.add('active');
+                                }
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-30% 0px -70% 0px' });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
